@@ -85,7 +85,7 @@ const Features = () => {
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary mb-4">
             <span className="text-xs font-medium">Why Choose Us</span>
           </div>
-          <h2 className="section-title">
+          <h2 className="section-title text-black">
             Cutting-Edge Features for <br className="hidden md:block" />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
               Modern Hosting Needs
@@ -106,8 +106,8 @@ const Features = () => {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5 text-primary">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-black">{feature.title}</h3>
+              <p className="feature-card-text">{feature.description}</p>
             </div>
           ))}
         </div>

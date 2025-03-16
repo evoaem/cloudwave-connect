@@ -92,7 +92,7 @@ const Pricing = () => {
               Pricing
             </span>
           </h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle text-white">
             Choose the plan that fits your needs. All plans include our core hosting features with no hidden fees.
           </p>
 
@@ -123,8 +123,8 @@ const Pricing = () => {
               key={index}
               className={`rounded-2xl overflow-hidden transition-all duration-300 fade-in-on-view ${
                 plan.popular 
-                  ? 'glass-card ring-2 ring-primary shadow-xl transform hover:translate-y-[-8px]' 
-                  : 'bg-white shadow-lg hover:shadow-xl transform hover:translate-y-[-5px]'
+                  ? 'popular-pricing-card ring-2 ring-primary shadow-xl transform hover:translate-y-[-8px]' 
+                  : 'pricing-card shadow-lg hover:shadow-xl transform hover:translate-y-[-5px]'
               }`}
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
@@ -134,15 +134,15 @@ const Pricing = () => {
                 </div>
               )}
               <div className="p-8">
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground mb-6">{plan.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-black">{plan.name}</h3>
+                <p className="text-gray-600 mb-6">{plan.description}</p>
                 <div className="flex items-baseline mb-6">
-                  <span className="text-4xl font-bold">
+                  <span className="text-4xl font-bold text-black">
                     {billingPeriod === 'annually' 
                       ? `$${parseInt(plan.price.substring(1)) * 0.8 * 12}`
                       : plan.price}
                   </span>
-                  <span className="text-muted-foreground ml-2">
+                  <span className="text-gray-600 ml-2">
                     /{billingPeriod === 'annually' ? 'year' : 'month'}
                   </span>
                 </div>
@@ -159,9 +159,9 @@ const Pricing = () => {
                   {plan.features.map((feature, i) => (
                     <div key={i} className="flex items-start">
                       <div className="flex-shrink-0 mt-1">
-                        <Check className="h-4 w-4 text-primary" />
+                        <Check className={`h-4 w-4 ${plan.popular ? 'text-primary' : 'text-primary'}`} />
                       </div>
-                      <p className="ml-2.5 text-sm">{feature}</p>
+                      <p className="ml-2.5 text-sm text-black">{feature}</p>
                     </div>
                   ))}
                 </div>
@@ -172,8 +172,8 @@ const Pricing = () => {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-1/4 h-1/4 bg-blue-100/50 rounded-full filter blur-3xl animate-pulse-subtle opacity-70"></div>
-      <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-indigo-100/50 rounded-full filter blur-3xl animate-pulse-subtle opacity-70" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-0 left-0 w-1/4 h-1/4 bg-blue-100/10 rounded-full filter blur-3xl animate-pulse-subtle opacity-30"></div>
+      <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-indigo-100/10 rounded-full filter blur-3xl animate-pulse-subtle opacity-30" style={{ animationDelay: '1s' }}></div>
     </section>
   );
 };
