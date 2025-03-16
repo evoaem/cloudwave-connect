@@ -1,9 +1,8 @@
-
 import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 // Custom Discord logo component
 const DiscordLogo = () => (
@@ -73,18 +72,6 @@ const Contact = () => {
                     <h4 className="text-sm font-medium text-muted-foreground mb-1">Email</h4>
                     <a href="mailto:hello@solarnode.xyz" className="text-lg hover:text-primary transition-colors">
                       hello@solarnode.xyz
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-sm font-medium text-muted-foreground mb-1">Phone</h4>
-                    <a href="tel:+18001234567" className="text-lg hover:text-primary transition-colors">
-                      +1 (800) 123-4567
                     </a>
                   </div>
                 </div>
